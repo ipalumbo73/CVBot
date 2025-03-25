@@ -1,9 +1,8 @@
-# +++ MODIFICATO PER DEEPSEEK +++
 import os
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import requests
-import uuid  # <-- Aggiunto per gestione conversazioni
+import uuid
 
 # Carica il prompt da file
 with open("prompt.txt", "r") as f:
@@ -11,8 +10,8 @@ with open("prompt.txt", "r") as f:
 
 app = FastAPI()
 
-# Configurazione DeepSeek
-DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY")
+# Configurazione DeepSeek (SICURA)
+DEEPSEEK_API_KEY = os.environ.get("DEEPSEEK_API_KEY")  # <-- Variabile d'ambiente
 DEEPSEEK_ENDPOINT = "https://api.deepseek.com/v1/chat/completions"
 
 # Memorizza le conversazioni in memoria
