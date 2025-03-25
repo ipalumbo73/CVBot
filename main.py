@@ -12,7 +12,7 @@ with open("prompt.txt", "r") as f:
 app = FastAPI()
 
 # Configurazione DeepSeek
-DEEPSEEK_API_KEY = "sk-e5ef945140fd4193ba9aee5f38657614"  # <-- Usa la tua chiave
+DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY")
 DEEPSEEK_ENDPOINT = "https://api.deepseek.com/v1/chat/completions"
 
 # Memorizza le conversazioni in memoria
